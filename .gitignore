@@ -1,0 +1,43 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit secrets
+.streamlit/secrets.toml
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+
+# Large/raw datasets if needed
+# Uncomment these only if you do NOT want to push the full dataset
+# data/train/
+# data/val/
+# data/train_synthetic/
+
+# Keep test data if required by professor
+# data/test/
+
+# Model files
+# Keep these commented if your professor needs the trained models in GitHub
+# *.pth
