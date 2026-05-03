@@ -1,5 +1,7 @@
 # Food Image Classification using Transfer Learning
 
+### Group 10 - Bala Swapnika Gopi & Mounika Teppola
+
 ## Project Overview
 
 This project explores how pretrained deep learning models can be adapted to a new image classification task through fine-tuning. The goal is to classify food images into six categories using an ImageNet-pretrained EfficientNet-B0 model and evaluate how data augmentation and synthesized data affect model performance.
@@ -30,7 +32,7 @@ The model classifies images into the following six food categories:
 
 ## Dataset Structure
 
-The dataset is organized into train, validation, test, and synthetic training folders.
+The dataset is organized into train, validation, test and synthetic training folders.
 
 ```text
 data/
@@ -66,6 +68,7 @@ data/
     ├── Salad/
     ├── Spaghetti/
     └── Sushi/
+
 ```
 
 The train_synthetic folder contains the original training images plus additional synthesized images generated using same-class MixUp and CutMix-style image synthesis.
@@ -83,12 +86,12 @@ Data augmentation is applied online during training. The original images are not
 
 ### Synthesized Data
 
-Synthesized data is generated offline and saved as new image files inside data/train_synthetic.For synthesis, this project uses same-class MixUp and CutMix-style image generation:
+Synthesized data is generated offline and saved as new image files inside data/train_synthetic. For synthesis, this project uses same-class MixUp and CutMix-style image generation:
 
 - MixUp-style synthesis blends two images from the same class.
 - CutMix-style synthesis copies a patch from one same class image into another same class image.
 
-Since both source images belong to the same class, the generated image keeps the same class label.This makes synthesized data different from online augmentation because it creates a larger saved training dataset.
+Since both source images belong to the same class, the generated image keeps the same class label. This makes synthesized data different from online augmentation because it creates a larger saved training dataset.
 
 ## Training Configurations
 
@@ -161,7 +164,7 @@ The notebook includes:
 
 ## Error Analysis
 
-The error analysis compares the baseline model with the best-performing synthetic + augmentation model. Most errors occurred among visually similar food classes. For example, pizza can sometimes be confused with pasta or salad because these classes may share similar visual features such as cheese, sauce, vegetables, toppings, and plate layouts. The synthetic + augmentation model improved test accuracy compared with the baseline, suggesting that online augmentation helped the model generalize better to unseen images.
+The error analysis compares the baseline model with the best-performing synthetic + augmentation model. Most errors occurred among visually similar food classes. For example, pizza can sometimes be confused with pasta or salad because these classes may share similar visual features such as cheese, sauce, vegetables, toppings and plate layouts. The synthetic + augmentation model improved test accuracy compared with the baseline, suggesting that online augmentation helped the model generalize better to unseen images.
 
 ## Robustness Testing
 
@@ -175,7 +178,6 @@ The perturbations included:
 - Brightness change
 
 The goal was to evaluate how sensitive the model is to image quality changes and distribution shifts.
-
 
 ## Streamlit Demo Application
 
