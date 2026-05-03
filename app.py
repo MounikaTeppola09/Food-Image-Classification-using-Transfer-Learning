@@ -339,7 +339,7 @@ def load_model():
     num_features = model.classifier[1].in_features
     model.classifier[1] = nn.Linear(num_features, len(class_names))
 
-    model_path = "best_model_combined.pth"
+    model_path = "best_model_aug.pth"
 
     if not os.path.exists(model_path):
         st.error(
@@ -395,7 +395,7 @@ with st.sidebar:
         """
         <div class="sidebar-card">
         <b>Best Configuration</b><br>
-        Original Data + Synthetic Data + Augmentation
+        Original Data + Augmentation
         </div>
         """,
         unsafe_allow_html=True
@@ -420,7 +420,7 @@ st.markdown(
         <div class="hero-title">🍽️ Food Image Classification App</div>
         <div class="hero-subtitle">
             Upload a food image and the fine-tuned EfficientNet-B0 model will classify it into one of six categories.
-            This demo uses the best-performing model trained with original data, synthetic images, and augmentation.
+            This demo uses the best-performing model trained with original data and online data augmentation.
         </div>
     </div>
     """,
@@ -470,7 +470,7 @@ with m4:
         """
         <div class="metric-card">
         <b>Best Test Accuracy</b><br>
-        83.33%
+        93.33%
         </div>
         """,
         unsafe_allow_html=True
