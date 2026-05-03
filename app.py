@@ -6,9 +6,9 @@ from PIL import Image
 import pandas as pd
 import os
 
-# -----------------------------
+
 # Page setup
-# -----------------------------
+
 st.set_page_config(
     page_title="Food Image Classifier",
     page_icon="🍽️",
@@ -16,9 +16,8 @@ st.set_page_config(
 )
 
 
-# -----------------------------
 # Custom CSS - Pastel Theme
-# -----------------------------
+
 st.markdown(
     """
     <style>
@@ -323,15 +322,13 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# -----------------------------
+
 # Class names
-# Make sure this order matches train_data.classes from ImageFolder
-# -----------------------------
+
 class_names = ["Burger", "Pasta", "Pizza", "Salad", "Spaghetti", "Sushi"]
 
-# -----------------------------
 # Model loading
-# -----------------------------
+
 @st.cache_resource
 def load_model():
     model = models.efficientnet_b0(weights=None)
@@ -353,9 +350,9 @@ def load_model():
 
 model = load_model()
 
-# -----------------------------
+
 # Image preprocessing
-# -----------------------------
+
 transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
@@ -365,9 +362,9 @@ transform = transforms.Compose([
     )
 ])
 
-# -----------------------------
+
 # Sidebar
-# -----------------------------
+
 with st.sidebar:
     st.markdown("## 🍽️ Project Details")
 
@@ -411,9 +408,9 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-# -----------------------------
+
 # Hero section
-# -----------------------------
+
 st.markdown(
     """
     <div class="hero">
@@ -427,9 +424,9 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-# -----------------------------
+
 # Top project metrics
-# -----------------------------
+
 m1, m2, m3, m4 = st.columns(4)
 
 with m1:
@@ -478,9 +475,9 @@ with m4:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# -----------------------------
+
 # File upload
-# -----------------------------
+
 st.markdown('<div class="section-title">Upload Image</div>', unsafe_allow_html=True)
 
 uploaded_file = st.file_uploader(
@@ -489,9 +486,9 @@ uploaded_file = st.file_uploader(
     label_visibility="collapsed"
 )
 
-# -----------------------------
+
 # Prediction
-# -----------------------------
+
 if uploaded_file is not None and model is not None:
     image = Image.open(uploaded_file).convert("RGB")
 
@@ -536,9 +533,8 @@ if uploaded_file is not None and model is not None:
 else:
     st.info("Upload a food image to see the model prediction and class confidence scores.")
 
-# -----------------------------
+
 # Explanation section
-# -----------------------------
 st.markdown("---")
 st.markdown('<div class="section-title">How This Demo Works</div>', unsafe_allow_html=True)
 
