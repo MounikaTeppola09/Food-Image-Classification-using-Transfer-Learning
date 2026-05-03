@@ -204,6 +204,8 @@ FinalProject/
 ├── best_model_syn.pth
 ├── best_model_combined.pth
 ├── Proposal.pptx
+├── augmentation_examples/
+├── synthetic_augmentation_examples/
 ├── data/
 │   ├── train/
 │   ├── val/
