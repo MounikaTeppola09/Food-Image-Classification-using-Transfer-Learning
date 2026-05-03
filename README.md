@@ -66,3 +66,27 @@ data/
     ├── Salad/
     ├── Spaghetti/
     └── Sushi/
+```
+
+The train_synthetic folder contains the original training images plus additional synthesized images generated using same-class MixUp and CutMix-style image synthesis.
+
+## Data Augmentation vs. Synthesized Data
+
+This project separates augmentation and synthesized data as two different strategies.
+
+### Data Augmentation
+Data augmentation is applied online during training. The original images are not saved as new files. Instead, transformations are randomly applied while the model is training.
+
+- Random horizontal flip
+- Resize
+- Normalization
+
+### Synthesized Data
+
+Synthesized data is generated offline and saved as new image files inside data/train_synthetic.For synthesis, this project uses same-class MixUp and CutMix-style image generation:
+
+- MixUp-style synthesis blends two images from the same class.
+- CutMix-style synthesis copies a patch from one same class image into another same class image.
+
+Since both source images belong to the same class, the generated image keeps the same class label.This makes synthesized data different from online augmentation because it creates a larger saved training dataset.
+

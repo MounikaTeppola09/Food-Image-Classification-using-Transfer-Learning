@@ -395,7 +395,7 @@ with st.sidebar:
         """
         <div class="sidebar-card">
         <b>Best Configuration</b><br>
-        Original Data + Augmentation
+        Original Data + Synthetic + Augmentation
         </div>
         """,
         unsafe_allow_html=True
@@ -420,7 +420,7 @@ st.markdown(
         <div class="hero-title">🍽️ Food Image Classification App</div>
         <div class="hero-subtitle">
             Upload a food image and the fine-tuned EfficientNet-B0 model will classify it into one of six categories.
-            This demo uses the best-performing model trained with original data and online data augmentation.
+            This demo uses the best-performing model trained with original data, synthetic data and online data augmentation.
         </div>
     </div>
     """,
@@ -470,7 +470,7 @@ with m4:
         """
         <div class="metric-card">
         <b>Best Test Accuracy</b><br>
-        93.33%
+        96.6%
         </div>
         """,
         unsafe_allow_html=True
