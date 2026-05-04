@@ -1,6 +1,15 @@
 # Food Image Classification using Transfer Learning
 
-### Group 10 - Bala Swapnika Gopi & Mounika Teppola
+## *Developed By*
+
+### *Bala Swapnika Gopi & Mounika Teppola (Group 10)*
+
+## External Sources
+
+We have used the following external sources and tools to support this implementation and analysis:
+
+- https://encord.com/blog/data-augmentation-guide/
+- https://docs.pytorch.org/vision/main/models/generated/torchvision.models.efficientnet_b0.html
 
 ## Project Overview
 
@@ -206,6 +215,8 @@ FinalProject/
 ├── best_model_syn.pth
 ├── best_model_combined.pth
 ├── Proposal.pptx
+├── Report.pdf
+├── Presentation Slides.pptx
 ├── augmentation_examples/
 ├── synthetic_augmentation_examples/
 ├── data/
